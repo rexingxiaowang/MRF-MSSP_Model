@@ -9,12 +9,12 @@ tic
 %    Aerial image
 %    y: The tested image
 %    label_k2: ground truth
-y=double(imread(".\Aerial image\image.bmp"));
-label_k2 = double(imread('.\Aerial image\GroundTruth.bmp'));
+y=double(imread("..\Aerial image\image.bmp"));
+label_k2 = double(imread('..\Aerial image\GroundTruth.bmp'));
 
 %%   Initialization of the two-layer labels
 %  High-level semantic label
-load('.\Initialization results\initialization.mat')
+load('..\Aerial image\initialization.mat')
 k2=size(probility2,2); % number of classes for segmentation
 
 %  Low-level semantic label
@@ -39,5 +39,5 @@ oa_2=s2.OverallAccuracy
 colorMap=[0,205,0;0,206,206;128,128,128;255,190,0]/255;
 figure,imshow(label2rgb(f(:,:,2),colorMap));
 %%   Save result
-imwrite(f(:,:,2),colorMap,'.\Result\Result_aerial-image.bmp');
+imwrite(f(:,:,2),colorMap,'..\Result\Result_aerial-image.bmp');
 toc
