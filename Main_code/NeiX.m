@@ -1,0 +1,34 @@
+function XN=NeiX(X)
+% X=imread('3589.00_494.50_size_1024.bmp');
+[s,t,K]=size(X);
+%计算X的8个方向临域图像
+Xul=zeros(s,t,K);%upper-left
+Xul(2:s,2:t,:)=X(1:s-1,1:t-1,:);
+% Xul(1,:,:)=X(1,:,:);
+% Xul(:,1,:)=X(:,1,:);
+Xu=zeros(s,t,K);%upper
+Xu(2:s,:,:)=X(1:s-1,:,:);
+% Xu(1,:,:)=X(1,:,:);
+Xur=zeros(s,t,K);%upper-right
+Xur(2:s,1:t-1,:)=X(1:s-1,2:t,:);
+% Xur(1,:,:)=X(1,:,:);
+% Xur(:,t,:)=X(:,t,:);
+Xr=zeros(s,t,K);%right
+Xr(:,1:t-1,:)=X(:,2:t,:);
+% Xr(:,t,:)=X(:,t,:);
+Xdr=zeros(s,t,K);%down-right
+Xdr(1:s-1,1:t-1,:)=X(2:s,2:t,:);
+% Xdr(s,:,:)=X(s,:,:);
+% Xdr(:,t,:)=X(:,t,:);
+Xd=zeros(s,t,K);%down
+Xd(1:s-1,:,:)=X(2:s,:,:);
+% Xd(s,:,:)=X(s,:,:);
+Xdl=zeros(s,t,K);%down-left
+Xdl(1:s-1,2:t,:)=X(2:s,1:t-1,:);
+% Xdl(:,1,:)=X(:,1,:);
+% Xdl(s,:,:)=X(s,:,:);
+Xl=zeros(s,t,K);%left
+Xl(:,2:t,:)=X(:,1:t-1,:);
+% Xl(:,1,:)=X(:,1,:);
+%
+XN=cat(3,Xul,Xu,Xur,Xr,Xdr,Xd,Xdl,Xl);
