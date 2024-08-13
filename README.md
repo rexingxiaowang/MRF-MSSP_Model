@@ -8,5 +8,7 @@ Note that hyperspectral or multispectral images need to be compressed into three
 The model was coded and tested under _MATLABR2022b_.
 
 **A note on data:**
-https://drive.google.com/drive/folders/1Uq9RPxYqN4ZDlnOWzABc1FTsCKxC1MBr?usp=sharing
+
+_https://drive.google.com/drive/folders/1Uq9RPxYqN4ZDlnOWzABc1FTsCKxC1MBr?usp=sharing_
+
 Place the file downloaded from the link into the Aerial image folder.
